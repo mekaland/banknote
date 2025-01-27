@@ -4,17 +4,16 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 
-# Modeli yükleme
+
 model = load_model('model.h5')
 
-# Görüntü işleme fonksiyonu
+
 def img_preprocess(img):
-    # Modelin beklediği giriş boyutuna uygun şekilde yeniden boyutlandırma
-    img = img.resize((224, 224))  # Burada 224x224, modelin beklediği boyuta göre değiştirilebilir
+    img = img.resize((224, 224))  
     img = np.array(img)
-    img = img / 255.0  # Normalizasyon
-    img = np.expand_dims(img, axis=0)  # Batch boyutu ekleme
-    img = img.astype('float32')  # Veri tipini uygun şekilde dönüştürme
+    img = img / 255.0 
+    img = np.expand_dims(img, axis=0) 
+    img = img.astype('float32')  
     return img
 
 st.title('Tr Banknot @kadirdagli')
