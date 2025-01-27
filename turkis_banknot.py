@@ -9,7 +9,7 @@ Original file is located at
 ## Türk lirası banknot tanıma
 """
 
-import cv2 #opecv kütüphanesi
+import cv2 
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
