@@ -9,10 +9,15 @@ model = load_model('model.h5')
 
 
 def img_preprocess(img):
-    img = img.resize((224, 224))  
+
+    img = img.resize((30, 30))  
     img = np.array(img)
-    img = img / 255.0 
-    img = np.expand_dims(img, axis=0) 
+    img = img / 255.0  
+    img = np.expand_dims(img, axis=0)  
+   
+    if len(img.shape) == 3 and img.shape[-1] != 3:
+        img = np.stack([img] * 3, axis=-1)  
+    
     img = img.astype('float32')  
     return img
 
