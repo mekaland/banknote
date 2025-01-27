@@ -16,7 +16,7 @@ from PIL import Image
 import numpy as np
 model=load_model=('model.h5')
 def img_preprocess(img):
-        img = cv2.resize(img,(30,30))
+        img = img.resize(img,(30,30))
         img=np.array(img)
         img=img/255.0
         img =np.expand_dims(img,axis=0)
